@@ -116,7 +116,16 @@ const theme = createTheme({
             letterSpacing: '0.15px',
           },
         },
-
+        {
+          props: { variant: 'h2' },
+          style: {
+            fontSize: '2rem',
+            fontWeight: '700',
+            lineHeight: '39.52px',
+            fontFamily: 'Poppins',
+            letterSpacing: '0.25px',
+          },
+        },
         {
           props: { variant: 'body1' },
           style: {
