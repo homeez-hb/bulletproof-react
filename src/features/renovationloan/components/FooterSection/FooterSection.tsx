@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Hidden, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 
 const classes = {
     FooterTextStyle: {
@@ -11,6 +11,10 @@ const classes = {
         marginBottom: '50px',
         xs: {
             fontSize: '36px',
+        },
+        display: {
+            xs: 'none',
+            md: 'block'
         }
     },
     SectionSubtitleMobileStyle: {
@@ -22,6 +26,10 @@ const classes = {
         textAlign: 'center',
         '& span': {
             color: '#EE3126'
+        },
+        display: {
+            xs: 'block',
+            md: 'none'
         }
     }
 }
@@ -29,14 +37,10 @@ const classes = {
 export const FooterSection = () => {
     return (
         <Box py={10} sx={{ textAlign: 'center' }}>
-            <Hidden lgDown>
-                <Typography sx={classes.FooterTextStyle}>FOOTER TEXT 123FOOTER TEXT 123FOOTER TEXT 123</Typography>
-            </Hidden>
 
-            <Hidden smUp>
-                <Typography sx={classes.SectionSubtitleMobileStyle}>LOREM IPSUM <span>OLOREM IPSUM</span> today</Typography>
-            </Hidden>
+            <Typography sx={classes.FooterTextStyle}>FOOTER TEXT 123FOOTER TEXT 123FOOTER TEXT 123</Typography>
 
+            <Typography sx={classes.SectionSubtitleMobileStyle}>LOREM IPSUM <span>OLOREM IPSUM</span> today</Typography>
 
             <Button variant="contained">Apply now</Button>
         </Box>

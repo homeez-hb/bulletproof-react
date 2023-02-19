@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, Typography, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemText, Hidden } from '@mui/material';
+import { Box, Grid, Typography, Accordion, AccordionSummary, AccordionDetails, List, ListItem, ListItemText } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const classes = {
@@ -60,7 +60,11 @@ const classes = {
         fontFamily: 'Poppins',
         color: '#3F3F3F',
         marginBottom: '24px',
-        lineHeight: '123.5%'
+        lineHeight: '123.5%',
+        display: {
+            xs: 'none',
+            md: 'block'
+        }
     },
     SectionSubtitleMobileStyle: {
         fontSize: '30px',
@@ -73,6 +77,10 @@ const classes = {
             display: 'block',
             width: '100%',
             color: '#EE3126'
+        },
+        display: {
+            xs: 'block',
+            md: 'none'
         }
     },
 
@@ -89,23 +97,15 @@ export const SectionSubtitle = () => {
         <Box px={{ xs: 2, lg: 8 }} pt={{ lg: 15, xs: 5 }}>
             <Grid container spacing={3}>
                 <Grid item xs={12} lg={8} md={6}>
-                    <Hidden lgDown>
-                        <img alt="TitleImg" src="/images/sectionsubtitle.png" style={{ width: '100%' }} />
-                    </Hidden>
-
+                    <Box component="img" alt="TitleImg" src="/images/sectionsubtitle.png" sx={{ width: '100%', display: { xs: 'none', md: 'block' } }}>
+                    </Box>
                 </Grid>
 
                 <Grid item xs={12} lg={4} md={6}>
-                    <Hidden smUp>
-                        <Box>
-                            <Typography sx={classes.SectionSubtitleMobileStyle}>Title<span>SUBTITLE</span></Typography>
-                        </Box>
-                    </Hidden>
-                    <Hidden lgDown>
-                        <Box>
-                            <Typography sx={classes.SectionSubtitleStyle}>SECTION SUBTITLE <br></br> ABCD</Typography>
-                        </Box>
-                    </Hidden>
+
+                    <Typography sx={classes.SectionSubtitleMobileStyle}>Title<span>SUBTITLE</span></Typography>
+
+                    <Typography sx={classes.SectionSubtitleStyle}>SECTION SUBTITLE <br></br> ABCD</Typography>
 
                     <Box sx={classes.According}>
                         <Accordion sx={classes.AccordionStyle} defaultExpanded={true} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
@@ -117,9 +117,7 @@ export const SectionSubtitle = () => {
                                 <Typography sx={{ fontSize: '18px', fontFamily: 'Poppins', fontWeight: '400', }}>ACTIVE CARD TITLE</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <Hidden smUp>
-                                    <img alt="TitleImg" src="/images/sectionsubtitle.png" style={{ width: '100%' }} />
-                                </Hidden>
+                                <Box component="img" alt="TitleImg" src="/images/sectionsubtitle.png" sx={{ width: '100%', display: { xs: 'block', md: 'none' } }}></Box>
                                 <List
                                     sx={{
                                         width: '100%',
@@ -159,9 +157,7 @@ export const SectionSubtitle = () => {
                                 <Typography sx={{ fontSize: '18px', fontFamily: 'Poppins', fontWeight: '400', }}>INACTIVE CARD TITLE</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <Hidden smUp>
-                                    <img alt="TitleImg" src="/images/sectionsubtitle.png" style={{ width: '100%' }} />
-                                </Hidden>
+                                <Box component="img" alt="TitleImg" src="/images/sectionsubtitle.png" sx={{ width: '100%', display: { xs: 'block', md: 'none' } }}></Box>
                                 <List
                                     sx={{
                                         width: '100%',
@@ -201,9 +197,7 @@ export const SectionSubtitle = () => {
                                 <Typography sx={{ fontSize: '18px', fontFamily: 'Poppins', fontWeight: '400', }}>INACTIVE CARD TITLE</Typography>
                             </AccordionSummary>
                             <AccordionDetails>
-                                <Hidden smUp>
-                                    <img alt="TitleImg" src="/images/sectionsubtitle.png" style={{ width: '100%' }} />
-                                </Hidden>
+                                <Box component="img" alt="TitleImg" src="/images/sectionsubtitle.png" sx={{ width: '100%', display: { xs: 'block', md: 'none' } }}></Box>
                                 <List
                                     sx={{
                                         width: '100%',

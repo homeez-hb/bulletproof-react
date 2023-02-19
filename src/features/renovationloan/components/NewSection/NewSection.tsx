@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Grid, Typography, Hidden } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import { IconOne, IconTow, IconThree } from '../../SvgIcons';
 import { SectionSubtitle } from '../SectionSubtitle/SectionSubtitle';
 const classes = {
@@ -8,7 +8,11 @@ const classes = {
         color: '#3F3F3F',
         fontFamily: 'Poppins',
         fontWeight: '300',
-        marginBottom: '50px'
+        marginBottom: '50px',
+        display: {
+            xs: 'none',
+            md: 'block'
+        }
     },
     SectionStyle: {
         background: 'linear-gradient(180deg, #FFFFFF 0%, #F7F3F0 5.52%, #F7F3F0 97.29%, #FFFFFF 100%)',
@@ -54,6 +58,10 @@ const classes = {
             display: 'block',
             width: '100%',
             color: '#EE3126'
+        },
+        display: {
+            xs: 'block',
+            md: 'none'
         }
     }
 
@@ -63,15 +71,12 @@ export const NewSection = () => {
         <>
             <Box style={classes.SectionStyle}>
                 <Box pt={10} sx={{ textAlign: 'center' }}>
-                    <Hidden smUp>
-                        <Typography sx={classes.SectionSubtitleMobileStyle}>Lorem ipsum<span>SUBTITLE</span></Typography>
-                    </Hidden>
 
-                    <Hidden lgDown>
-                        <Typography variant="h1" component="h1" style={classes.SectionTitle}>
-                            NEW SECTION TITLE
-                        </Typography>
-                    </Hidden>
+                    <Typography sx={classes.SectionSubtitleMobileStyle}>Lorem ipsum<span>SUBTITLE</span></Typography>
+                    <Typography variant="h1" component="h1" sx={classes.SectionTitle}>
+                        NEW SECTION TITLE
+                    </Typography>
+
 
                 </Box>
 
